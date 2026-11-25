@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <base href="/">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mis reservas | SalonBook</title>
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <script src="js/mis-reservas.js" defer></script>
+  <link rel="stylesheet" href="css/mis-reservas.css">
+</head>
+<body>
+  <header class="cabecera">
+    <a href="./" class="logo">SalonBook</a>
+    <nav class="menu">
+      <a href="reservas" class="menu__enlace">Reservar cita</a>
+      <a href="mis-reservas" class="menu__enlace">Ver mis citas</a>
+      <button class="boton boton--secundario boton--pequeno" id="logout">Cerrar sesión</button>
+    </nav>
+  </header>
+
+  <main class="mis-reservas">
+    <div class="mis-reservas__contenido">
+      <h1 class="mis-reservas__titulo">Mis reservas</h1>
+      <p class="mis-reservas__subtitulo" id="saludo-usuario">Aquí puedes ver y cancelar tus citas.</p>
+
+      <p id="reservas-mensaje" class="mensaje oculto"></p>
+
+      <section class="bloque">
+        <h2 class="bloque__titulo">Próximas citas</h2>
+        <p id="proximas-mensaje" class="bloque__mensaje">Cargando tus reservas…</p>
+        <div id="proximas" class="reservas"></div>
+      </section>
+
+      <section class="bloque">
+        <h2 class="bloque__titulo">Historial</h2>
+        <p id="historial-mensaje" class="bloque__mensaje">Cargando tus reservas…</p>
+        <div id="historial" class="reservas"></div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="pie">
+    <p>&copy; 2026 SalonBook · Peluquería · Lunes a sábado de 9:00 a 20:00</p>
+  </footer>
+</body>
+</html>

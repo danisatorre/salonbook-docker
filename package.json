@@ -1,0 +1,32 @@
+{
+  "name": "salonbook",
+  "version": "1.0.0",
+  "description": "Aplicación web de reservas para una peluquería",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danisatorre/salonbook.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/danisatorre/salonbook/issues"
+  },
+  "homepage": "https://github.com/danisatorre/salonbook#readme",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "dotenv": "^18.0.10",
+    "express": "^5.3.0",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.12.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}

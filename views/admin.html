@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <base href="/">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Administración | SalonBook</title>
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <script src="js/admin.js" defer></script>
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+  <header class="cabecera">
+    <a href="./" class="logo">SalonBook</a>
+    <nav class="menu">
+      <span class="menu__etiqueta">Panel de administración</span>
+      <button class="boton boton--secundario boton--pequeno" id="logout">Cerrar sesión</button>
+    </nav>
+  </header>
+
+  <main class="admin">
+    <div class="admin__contenido">
+      <h1 class="admin__titulo">Panel de administración</h1>
+      <p class="admin__subtitulo" id="saludo-usuario">Gestiona las reservas y los servicios de la peluquería.</p>
+
+      <p id="admin-mensaje" class="mensaje oculto"></p>
+
+      <!-- Reservas de un día -->
+      <section class="bloque">
+        <h2 class="bloque__titulo">Reservas del día</h2>
+        <div class="campo campo--fila">
+          <label for="fecha" class="campo__etiqueta">Día</label>
+          <input type="date" id="fecha" name="fecha" class="campo__input">
+        </div>
+        <p id="reservas-mensaje" class="bloque__mensaje">Cargando reservas…</p>
+        <div id="reservas" class="reservas"></div>
+      </section>
+
+      <!-- Crear / editar servicio -->
+      <section class="bloque">
+        <h2 class="bloque__titulo" id="form-titulo">Nuevo servicio</h2>
+        <form id="form-servicio" class="formulario" novalidate>
+          <input type="hidden" id="servicio-id" name="servicio-id">
+
+          <div class="campo">
+            <label for="nombre" class="campo__etiqueta">Nombre</label>
+            <input type="text" id="nombre" name="nombre" class="campo__input" placeholder="Corte de pelo">
+            <span id="error_nombre_ser" class="campo__error"></span>
+          </div>
+
+          <div class="campo">
+            <label for="descripcion" class="campo__etiqueta">Descripción</label>
+            <textarea id="descripcion" name="descripcion" class="campo__input" rows="3" placeholder="Lavado, corte y peinado"></textarea>
+            <span id="error_descripcion_ser" class="campo__error"></span>
+          </div>
+
+          <div class="formulario__fila">
+            <div class="campo">
+              <label for="precio" class="campo__etiqueta">Precio (€)</label>
+              <input type="number" id="precio" name="precio" class="campo__input" min="0" step="0.5" placeholder="15">
+              <span id="error_precio_ser" class="campo__error"></span>
+            </div>
+
+            <div class="campo">
+              <label for="duracion" class="campo__etiqueta">Duración (min)</label>
+              <input type="number" id="duracion" name="duracion" class="campo__input" min="30" max="480" step="30" placeholder="30">
+              <span id="error_duracion_ser" class="campo__error"></span>
+            </div>
+          </div>
+
+          <div class="campo">
+            <label for="imgServicio" class="campo__etiqueta">Imagen (opcional)</label>
+            <input type="text" id="imgServicio" name="imgServicio" class="campo__input" placeholder="corte-pelo.jpg">
+            <span class="campo__ayuda">Nombre del archivo dentro de /images/servicios/</span>
+          </div>
+
+          <p id="servicio-mensaje" class="mensaje oculto"></p>
+
+          <div class="formulario__botones">
+            <button type="submit" id="bguardar" class="boton boton--principal">Crear servicio</button>
+            <button type="button" id="bcancelar-edicion" class="boton boton--secundario oculto">Editar o crear otro servicio</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Listado de servicios -->
+      <section class="bloque">
+        <h2 class="bloque__titulo">Servicios</h2>
+        <p id="servicios-mensaje" class="bloque__mensaje">Cargando servicios…</p>
+        <div id="servicios" class="servicios"></div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="pie">
+    <p>&copy; 2026 SalonBook · Peluquería · Lunes a sábado de 9:00 a 20:00</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <base href="/">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reservar cita | SalonBook</title>
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <script src="js/reservar.js" defer></script>
+  <link rel="stylesheet" href="css/reservar.css">
+</head>
+<body>
+  <header class="cabecera">
+    <a href="./" class="logo">SalonBook</a>
+    <nav class="menu">
+      <a href="reservas" class="menu__enlace">Reservar cita</a>
+      <a href="mis-reservas" class="menu__enlace">Ver mis citas</a>
+      <button class="boton boton--secundario boton--pequeno" id="logout">Cerrar sesión</button>
+    </nav>
+  </header>
+
+  <main class="reserva">
+    <div class="reserva__tarjeta">
+      <h1 class="reserva__titulo">Reservar cita</h1>
+      <p class="reserva__subtitulo" id="saludo-usuario">Elige el servicio, el día y la hora que prefieras.</p>
+
+      <form id="form-reserva" class="formulario" novalidate>
+        <!-- Paso 1: servicio -->
+        <div class="campo">
+          <label for="servicio" class="campo__etiqueta">1. Servicio</label>
+          <select id="servicio" name="servicio" class="campo__input">
+            <option value="">Cargando servicios…</option>
+          </select>
+          <span id="error_servicio_res" class="campo__error"></span>
+          <p id="servicio-info" class="servicio-info oculto"></p>
+        </div>
+
+        <!-- Paso 2: día -->
+        <div class="campo">
+          <label for="fecha" class="campo__etiqueta">2. Día</label>
+          <input type="date" id="fecha" name="fecha" class="campo__input">
+          <span id="error_fecha_res" class="campo__error"></span>
+        </div>
+
+        <!-- Paso 3: hora (los botones los pinta reservar.js) -->
+        <div class="campo">
+          <span class="campo__etiqueta">3. Hora</span>
+          <p id="horas-mensaje" class="horas__mensaje">Elige un servicio y un día para ver las horas libres.</p>
+          <div id="horas" class="horas"></div>
+          <input type="hidden" id="hora" name="hora">
+          <span id="error_hora_res" class="campo__error"></span>
+        </div>
+
+        <p id="reserva-mensaje" class="mensaje oculto"></p>
+
+        <button type="submit" id="breservar" class="boton boton--principal boton--ancho">Confirmar reserva</button>
+      </form>
+    </div>
+  </main>
+
+  <footer class="pie">
+    <p>&copy; 2026 SalonBook · Peluquería · Lunes a sábado de 9:00 a 20:00</p>
+  </footer>
+</body>
+</html>

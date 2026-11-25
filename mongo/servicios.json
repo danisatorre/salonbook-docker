@@ -1,0 +1,91 @@
+[{
+	"_id": {
+		"$oid": "6afdf3b35ddfe8ea2a9a5724"
+	},
+	"nombre": "Corte",
+	"descripcion": "",
+	"precio": 15,
+	"duracion": 30,
+	"activo": true,
+	"createdAt": {
+		"$date": "2026-11-18T18:51:31.712Z"
+	},
+	"updatedAt": {
+		"$date": "2026-11-20T17:28:23.019Z"
+	},
+	"__v": 0,
+	"imgServicio": "corte-pelo.jpg"
+},
+{
+	"_id": {
+		"$oid": "6afdf4e15ddfe8ea2a9a5727"
+	},
+	"nombre": "Tinte de pelo",
+	"descripcion": "Colorear el pelo de uno o varios colores",
+	"precio": 45,
+	"duracion": 90,
+	"activo": true,
+	"createdAt": {
+		"$date": "2026-11-18T18:56:33.866Z"
+	},
+	"updatedAt": {
+		"$date": "2026-11-20T17:28:04.131Z"
+	},
+	"__v": 0,
+	"imgServicio": "tinte-pelo.jpg"
+},
+{
+	"_id": {
+		"$oid": "6b00260563ca487851566040"
+	},
+	"nombre": "Permanente",
+	"descripcion": "Hazte los rizos en el pelo",
+	"precio": 50,
+	"duracion": 90,
+	"activo": true,
+	"createdAt": {
+		"$date": "2026-11-20T10:50:45.154Z"
+	},
+	"updatedAt": {
+		"$date": "2026-11-20T17:27:07.35Z"
+	},
+	"__v": 0,
+	"imgServicio": "permanente.jpg"
+},
+{
+	"_id": {
+		"$oid": "6b034b27fbb03c240fc82791"
+	},
+	"nombre": "Decoloración",
+	"descripcion": "Elimina el tinte de pelo que tengas en tu cabello y vuelve a su estado original",
+	"precio": 55,
+	"duracion": 90,
+	"imgServicio": "decoloracion.jpg",
+	"activo": true,
+	"createdAt": {
+		"$date": "2026-11-22T20:05:59.829Z"
+	},
+	"updatedAt": {
+		"$date": "2026-11-22T20:06:47.949Z"
+	},
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "6b034c78fbb03c240fc82792"
+	},
+	"nombre": "weawawddw",
+	"descripcion": "asddwadwawddwa",
+	"precio": 13,
+	"duracion": 60,
+	"imgServicio": "decoloracio.jpg",
+	"activo": false,
+	"createdAt": {
+		"$date": "2026-11-22T20:11:36.3Z"
+	},
+	"updatedAt": {
+		"$date": "2026-11-22T20:12:10.478Z"
+	},
+	"__v": 0
+}]
+

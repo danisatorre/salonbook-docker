@@ -1,0 +1,65 @@
+[{
+	"_id": {
+		"$oid": "6afdde75bf8f39f99a359dfc"
+	},
+	"nombre": "Ana",
+	"email": "ana@test.com",
+	"password": "$2b$10$wAiI/2x5LLl/v/L.s1vvvuzO74R9XsbneqXJFPij6u3o60NIWjYaG",
+	"rol": "cliente",
+	"createdAt": {
+		"$date": "2026-11-18T17:20:53.388Z"
+	},
+	"updatedAt": {
+		"$date": "2026-11-18T17:20:53.388Z"
+	},
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "6afdf25b5ddfe8ea2a9a5723"
+	},
+	"nombre": "admin",
+	"email": "admin@test.com",
+	"password": "$2b$10$.N/a4XKtbKnopDoiqaBiBeLva01OkT4Q/6LpfIbRmIX3eBD4IL/9m",
+	"rol": "admin",
+	"createdAt": {
+		"$date": "2026-11-18T18:45:47.704Z"
+	},
+	"updatedAt": {
+		"$date": "2026-11-18T18:45:47.704Z"
+	},
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "6afed35a41e3ce13209fc054"
+	},
+	"nombre": "Dani Satorre",
+	"email": "danisatorre@test.com",
+	"password": "$2b$10$Aid0yAzzGdS4D22WI0LpQuoEVlxgK8WgCM94rKFTNkj0hOKEzk5Ay",
+	"rol": "cliente",
+	"createdAt": {
+		"$date": "2026-11-19T10:45:46.91Z"
+	},
+	"updatedAt": {
+		"$date": "2026-11-19T10:45:46.91Z"
+	},
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "6b006694cace37a8bfef8791"
+	},
+	"nombre": "Dani",
+	"email": "dani@satorre.es",
+	"password": "$2b$10$8eCZLq14d6FkF1AhAxmWgOTFtTfbJQuSoR5sbwbuCzgzKdb1laqIu",
+	"rol": "cliente",
+	"createdAt": {
+		"$date": "2026-11-20T15:26:12.875Z"
+	},
+	"updatedAt": {
+		"$date": "2026-11-20T15:26:12.875Z"
+	},
+	"__v": 0
+}]
+

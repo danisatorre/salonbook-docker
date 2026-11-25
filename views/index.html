@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <base href="/">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SalonBook</title>
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <script src="js/home.js" defer></script>
+  <script src="js/servicios.js" defer></script>
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <header class="cabecera">
+    <a href="./" class="logo">SalonBook</a>
+    <nav class="menu">
+      <a href="login" class="menu__enlace" id="login">Iniciar sesión</a>
+      <a href="register" class="boton boton--principal boton--pequeno" id="register">Registrarse</a>
+      <a href="reservas" class="menu__enlace oculto" id="reservar-cita">Reservar cita</a>
+      <a href="mis-reservas" class="menu__enlace oculto" id="mis-reservas">Ver mis citas</a>
+      <button class="boton boton--secundario boton--pequeno oculto" id="logout">Cerrar sesión</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Portada -->
+    <section class="hero">
+      <div class="hero__contenido">
+        <h3 class="bienvenida-usuario" id="bienvenida-usuario"></h3>
+        <span class="badge">Peluquería · Cita online</span>
+        <h1 class="hero__titulo">Tu cita en la peluquería, en menos de un minuto</h1>
+        <p class="hero__texto">
+          Elige el servicio, escoge el día y la hora que mejor te venga y listo.
+          Sin llamadas y sin esperas.
+        </p>
+        <div class="hero__acciones">
+          <a href="reservas" class="boton boton--principal">Reservar cita</a>
+          <a href="#servicios" class="boton boton--secundario">Ver servicios</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cómo funciona -->
+    <section class="seccion">
+      <h2 class="seccion__titulo">¿Cómo funciona?</h2>
+      <ol class="pasos">
+        <li class="paso">
+          <span class="paso__numero">1</span>
+          <h3>Elige un servicio</h3>
+          <p>Corte, color, peinado… con su precio y duración.</p>
+        </li>
+        <li class="paso">
+          <span class="paso__numero">2</span>
+          <h3>Escoge día y hora</h3>
+          <p>Solo verás las horas que están libres, de 9:00 a 20:00.</p>
+        </li>
+        <li class="paso">
+          <span class="paso__numero">3</span>
+          <h3>Confirma tu reserva</h3>
+          <p>Consulta o cancela tus citas cuando quieras.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- Servicios -->
+    <section class="seccion" id="servicios">
+      <h2 class="seccion__titulo">Nuestros servicios</h2>
+      <p id="servicios-mensaje" class="mensaje">Cargando servicios…</p>
+      <div id="lista-servicios" class="servicios"></div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <p>&copy; 2026 SalonBook · Peluquería · Lunes a sábado de 9:00 a 20:00</p>
+  </footer>
+</body>
+</html>

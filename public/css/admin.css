@@ -1,0 +1,505 @@
+/* ==========================================================
+   Panel de administración - SalonBook
+   ========================================================== */
+
+/* Variables de color: misma paleta que el resto de páginas */
+:root {
+  --fondo: #FBF5F0;             /* Crema Carne Suave: fondo general */
+  --superficie: #F2DFD3;        /* Carne Rosado / Nude: tarjetas */
+  --texto-principal: #3B2318;   /* Marrón Espresso Oscuro: títulos y marca */
+  --texto-secundario: #7A5442;  /* Marrón Cacao / Moca: descripciones */
+  --acento: #B85D3B;            /* Terracota / Canela: botones CTA */
+  --acento-hover: #9C4C2F;      /* Terracota algo más oscuro para el hover */
+  --complementario: #6E7F6B;    /* Salvia / Verde Oliva: estados OK y mensajes de éxito */
+
+  --radio: 16px;
+  --sombra: 0 10px 30px rgba(59, 35, 24, 0.12);
+}
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--fondo);
+  color: var(--texto-principal);
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* ---------- Cabecera ---------- */
+.cabecera {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid var(--superficie);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--texto-principal);
+  text-decoration: none;
+  letter-spacing: 0.5px;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.menu__enlace {
+  color: var(--texto-principal);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.menu__enlace:hover {
+  color: var(--acento);
+}
+
+/* ---------- Contenido central ---------- */
+.admin {
+  flex: 1; /* ocupa el espacio libre y empuja el footer abajo */
+  padding: 2.5rem 1rem;
+  background: linear-gradient(135deg, var(--fondo) 0%, var(--superficie) 100%);
+}
+
+.admin__contenido {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.admin__titulo {
+  font-size: 1.9rem;
+  text-align: center;
+}
+
+/* Línea terracota debajo del título, igual que en la home */
+.admin__titulo::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  margin: 0.6rem auto 0;
+  background-color: var(--acento);
+  border-radius: 2px;
+}
+
+.admin__subtitulo {
+  text-align: center;
+  color: var(--texto-secundario);
+}
+
+/* ---------- Bloques (Próximas / Historial) ---------- */
+.bloque {
+  padding: 2rem;
+  background-color: #FFFFFF;
+  border-radius: var(--radio);
+  border-top: 6px solid var(--acento);
+  box-shadow: var(--sombra);
+}
+
+.bloque__titulo {
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.bloque__mensaje {
+  color: var(--texto-secundario);
+}
+
+.bloque__mensaje:empty {
+  display: none;
+}
+
+/* ---------- Lista de reservas (las pinta admin.js) ---------- */
+.reservas {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.reservas:empty {
+  display: none;
+}
+
+.reserva-tarjeta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 1.25rem 1.5rem;
+  background-color: var(--fondo);
+  border: 2px solid var(--superficie);
+  border-left: 5px solid var(--acento);
+  border-radius: 10px;
+}
+
+/* Las canceladas se ven apagadas */
+.reserva-tarjeta--cancelada {
+  border-left-color: var(--texto-secundario);
+  opacity: 0.7;
+}
+
+.reserva-tarjeta--cancelada .reserva-tarjeta__servicio {
+  text-decoration: line-through;
+}
+
+.reserva-tarjeta__cabecera {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.reserva-tarjeta__servicio {
+  font-size: 1.15rem;
+}
+
+.reserva-tarjeta__fecha {
+  color: var(--texto-secundario);
+}
+
+/* El primer carácter en mayúscula: "Miércoles, 25 de noviembre…" */
+.reserva-tarjeta__fecha::first-letter {
+  text-transform: uppercase;
+}
+
+/* Enlace "Ver información del servicio" debajo de la fecha */
+.reserva-tarjeta__enlace {
+  align-self: flex-start;
+  font-size: 0.9rem;
+}
+
+.reserva-tarjeta__precio {
+  margin-left: 0.75rem;
+  font-weight: 700;
+  color: var(--acento);
+}
+
+.reserva-tarjeta .boton {
+  align-self: flex-start;
+  margin-top: 0.5rem;
+}
+
+/* ---------- Etiqueta de estado ---------- */
+.estado {
+  flex-shrink: 0;
+  padding: 0.2rem 0.8rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #FFFFFF;
+  border-radius: 999px;
+}
+
+.estado--confirmada {
+  background-color: var(--complementario);
+}
+
+.estado--pasada {
+  background-color: var(--texto-secundario);
+}
+
+.estado--cancelada {
+  background-color: var(--acento-hover);
+}
+
+/* ---------- Botones ---------- */
+.boton {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  font-family: inherit;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 8px;
+  border: 2px solid var(--acento);
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s, transform 0.2s;
+}
+
+.boton:hover {
+  transform: translateY(-2px);
+}
+
+.boton--principal {
+  background-color: var(--acento);
+  color: #FFFFFF;
+}
+
+.boton--principal:hover {
+  background-color: var(--acento-hover);
+  border-color: var(--acento-hover);
+}
+
+.boton--secundario {
+  background-color: transparent;
+  color: var(--acento);
+}
+
+.boton--secundario:hover {
+  background-color: var(--acento);
+  color: #FFFFFF;
+}
+
+.boton--pequeno {
+  padding: 0.45rem 1rem;
+  font-size: 0.9rem;
+}
+
+/* Mientras se cancela la reserva el botón se desactiva */
+.boton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.enlace {
+  color: var(--acento);
+  font-weight: 600;
+}
+
+.enlace:hover {
+  color: var(--acento-hover);
+}
+
+/* Accesibilidad: contorno visible al navegar con teclado */
+a:focus-visible,
+.boton:focus-visible {
+  outline: 3px solid var(--complementario);
+  outline-offset: 3px;
+}
+
+/* ---------- Mensajes ---------- */
+.mensaje {
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  border-radius: 8px;
+}
+
+.mensaje--error {
+  color: var(--acento-hover);
+  background-color: #FFFFFF;
+  border-left: 4px solid var(--acento);
+}
+
+.mensaje--exito {
+  color: #FFFFFF;
+  background-color: var(--complementario);
+}
+
+.oculto {
+  display: none;
+}
+
+/* ---------- Pie ---------- */
+.pie {
+  padding: 1.25rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--texto-secundario);
+  border-top: 1px solid var(--superficie);
+}
+
+/* ---------- Móvil ---------- */
+@media (max-width: 480px) {
+  .cabecera {
+    padding: 1rem;
+  }
+
+  .admin__titulo {
+    font-size: 1.5rem;
+  }
+
+  .bloque {
+    padding: 1.5rem 1rem;
+  }
+
+  .reserva-tarjeta {
+    padding: 1rem;
+  }
+
+  .reserva-tarjeta .boton {
+    width: 100%;
+  }
+}
+
+/* ==========================================================
+   Estilos propios del panel de administración
+   ========================================================== */
+
+.menu__etiqueta {
+  font-weight: 600;
+  color: var(--texto-secundario);
+}
+
+.reserva-tarjeta__cliente {
+  color: var(--texto-secundario);
+}
+
+/* ---------- Formulario de servicios ---------- */
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* Precio y duración en la misma fila */
+.formulario__fila {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.formulario__botones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+/* Selector de día de las reservas: etiqueta e input en línea */
+.campo--fila {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.campo__etiqueta {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.campo__input {
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-family: inherit;
+  color: var(--texto-principal);
+  background-color: var(--fondo);
+  border: 2px solid var(--superficie);
+  border-radius: 8px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+textarea.campo__input {
+  resize: vertical;
+}
+
+.campo__input::placeholder {
+  color: var(--texto-secundario);
+  opacity: 0.7;
+}
+
+.campo__input:focus {
+  outline: none;
+  border-color: var(--complementario);
+  box-shadow: 0 0 0 3px rgba(110, 127, 107, 0.25);
+}
+
+.campo__ayuda {
+  font-size: 0.8rem;
+  color: var(--texto-secundario);
+}
+
+/* Mensaje de error debajo de cada campo (lo rellena validate_servicio) */
+.campo__error {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--acento-hover);
+}
+
+.campo__error:empty {
+  display: none;
+}
+
+/* ---------- Lista de servicios (la pinta admin.js) ---------- */
+.servicios {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.servicios:empty {
+  display: none;
+}
+
+.servicio-tarjeta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 1.25rem 1.5rem;
+  background-color: var(--fondo);
+  border: 2px solid var(--superficie);
+  border-top: 5px solid var(--complementario);
+  border-radius: 10px;
+}
+
+.servicio-tarjeta__cabecera {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.servicio-tarjeta__nombre {
+  font-size: 1.1rem;
+}
+
+.servicio-tarjeta__precio {
+  flex-shrink: 0;
+  font-weight: 700;
+  color: var(--acento);
+}
+
+.servicio-tarjeta__descripcion {
+  flex: 1;
+  font-size: 0.95rem;
+  color: var(--texto-secundario);
+}
+
+.servicio-tarjeta__duracion {
+  font-size: 0.9rem;
+}
+
+.servicio-tarjeta__botones {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+/* ---------- Móvil ---------- */
+@media (max-width: 480px) {
+  .formulario__fila {
+    grid-template-columns: 1fr;
+  }
+
+  .campo--fila {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .formulario__botones .boton,
+  .servicio-tarjeta__botones .boton {
+    flex: 1;
+  }
+}

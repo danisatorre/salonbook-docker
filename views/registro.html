@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <base href="/">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro | SalonBook</title>
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <script src="js/registro.js" defer></script>
+  <link rel="stylesheet" href="css/registro.css">
+</head>
+<body>
+  <header class="cabecera">
+    <a href="./" class="logo">SalonBook</a>
+    <nav class="menu">
+      <a href="login" class="menu__enlace" id="login">Iniciar sesión</a>
+      <a href="register" class="boton boton--principal boton--pequeno" id="register">Registrarse</a>
+      <a href="reservas" class="menu__enlace oculto" id="reservar-cita">Reservar cita</a>
+      <a href="mis-reservas" class="menu__enlace oculto" id="mis-reservas">Ver mis citas</a>
+      <button class="boton boton--secundario boton--pequeno oculto" id="logout">Cerrar sesión</button>
+    </nav>
+  </header>
+
+  <main class="registro">
+    <div class="registro__tarjeta">
+      <h1 class="registro__titulo">Crear cuenta</h1>
+      <p class="registro__subtitulo">Regístrate para reservar tu cita en pocos segundos.</p>
+
+      <form id="form-registro" class="formulario" novalidate>
+        <div class="campo">
+          <label for="nombre_reg" class="campo__etiqueta">Nombre</label>
+          <input type="text" id="nombre_reg" name="nombre" class="campo__input"
+                 placeholder="Tu nombre" autocomplete="name">
+          <span id="error_nombre_reg" class="campo__error"></span>
+        </div>
+
+        <div class="campo">
+          <label for="email_reg" class="campo__etiqueta">Email</label>
+          <input type="email" id="email_reg" name="email" class="campo__input"
+                 placeholder="tucorreo@ejemplo.com" autocomplete="email">
+          <span id="error_email_reg" class="campo__error"></span>
+        </div>
+
+        <div class="campo">
+          <label for="pwd1_reg" class="campo__etiqueta">Contraseña</label>
+          <input type="password" id="pwd1_reg" name="password" class="campo__input"
+                 placeholder="Mínimo 8 caracteres" autocomplete="new-password">
+          <span id="error_pwd1_reg" class="campo__error"></span>
+        </div>
+
+        <div class="campo">
+          <label for="pwd2_reg" class="campo__etiqueta">Repetir contraseña</label>
+          <input type="password" id="pwd2_reg" name="password2" class="campo__input"
+                 placeholder="Vuelve a escribir la contraseña" autocomplete="new-password">
+          <span id="error_pwd2_reg" class="campo__error"></span>
+        </div>
+
+        <p id="registro-mensaje" class="mensaje oculto"></p>
+
+        <button type="submit" id="bregistro" class="boton boton--principal boton--ancho">Crear cuenta</button>
+      </form>
+
+      <p class="registro__pie">
+        ¿Ya tienes cuenta? <a href="login" class="enlace">Inicia sesión aquí</a>
+      </p>
+    </div>
+  </main>
+
+  <footer class="pie">
+    <p>&copy; 2026 SalonBook · Peluquería · Lunes a sábado de 9:00 a 20:00</p>
+  </footer>
+</body>
+</html>

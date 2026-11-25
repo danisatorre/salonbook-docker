@@ -1,0 +1,259 @@
+/* ==========================================================
+   Página de registro - SalonBook
+   ========================================================== */
+
+/* Variables de color: misma paleta que el resto de páginas */
+:root {
+  --fondo: #FBF5F0;             /* Crema Carne Suave: fondo general */
+  --superficie: #F2DFD3;        /* Carne Rosado / Nude: tarjetas e inputs */
+  --texto-principal: #3B2318;   /* Marrón Espresso Oscuro: títulos y marca */
+  --texto-secundario: #7A5442;  /* Marrón Cacao / Moca: descripciones y placeholders */
+  --acento: #B85D3B;            /* Terracota / Canela: botones CTA */
+  --acento-hover: #9C4C2F;      /* Terracota algo más oscuro para el hover */
+  --complementario: #6E7F6B;    /* Salvia / Verde Oliva: foco y mensajes de éxito */
+
+  --radio: 16px;
+  --sombra: 0 10px 30px rgba(59, 35, 24, 0.12);
+}
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--fondo);
+  color: var(--texto-principal);
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* ---------- Cabecera ---------- */
+.cabecera {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid var(--superficie);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--texto-principal);
+  text-decoration: none;
+  letter-spacing: 0.5px;
+}
+
+/* ---------- Contenido central ---------- */
+.registro {
+  flex: 1; /* ocupa el espacio libre y empuja el footer abajo */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  background: linear-gradient(135deg, var(--fondo) 0%, var(--superficie) 100%);
+}
+
+.registro__tarjeta {
+  width: 100%;
+  max-width: 460px;
+  padding: 2.5rem 2rem;
+  background-color: #FFFFFF;
+  border-radius: var(--radio);
+  border-top: 6px solid var(--acento);
+  box-shadow: var(--sombra);
+}
+
+.registro__titulo {
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.registro__subtitulo {
+  margin-bottom: 2rem;
+  text-align: center;
+  color: var(--texto-secundario);
+}
+
+.registro__pie {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 0.95rem;
+  color: var(--texto-secundario);
+}
+
+/* ---------- Formulario ---------- */
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.campo__etiqueta {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.campo__input {
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-family: inherit;
+  color: var(--texto-principal);
+  background-color: var(--fondo);
+  border: 2px solid var(--superficie);
+  border-radius: 8px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.campo__input::placeholder {
+  color: var(--texto-secundario);
+  opacity: 0.7;
+}
+
+/* Al escribir en un campo se resalta con el verde salvia */
+.campo__input:focus {
+  outline: none;
+  border-color: var(--complementario);
+  box-shadow: 0 0 0 3px rgba(110, 127, 107, 0.25);
+}
+
+/* Mensaje de error debajo de cada campo (lo rellena validate_register) */
+.campo__error {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--acento-hover);
+}
+
+/* Si el span está vacío no ocupa espacio */
+.campo__error:empty {
+  display: none;
+}
+
+/* ---------- Botones ---------- */
+.boton {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  font-family: inherit;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 8px;
+  border: 2px solid var(--acento);
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s, transform 0.2s;
+}
+
+.boton:hover {
+  transform: translateY(-2px);
+}
+
+.boton--principal {
+  background-color: var(--acento);
+  color: #FFFFFF;
+}
+
+.boton--principal:hover {
+  background-color: var(--acento-hover);
+  border-color: var(--acento-hover);
+}
+
+.boton--secundario {
+  background-color: transparent;
+  color: var(--acento);
+}
+
+.boton--secundario:hover {
+  background-color: var(--acento);
+  color: #FFFFFF;
+}
+
+.boton--pequeno {
+  padding: 0.45rem 1rem;
+  font-size: 0.9rem;
+}
+
+.boton--ancho {
+  width: 100%;
+}
+
+/* Mientras se envía el formulario el botón se desactiva */
+.boton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.enlace {
+  color: var(--acento);
+  font-weight: 600;
+}
+
+.enlace:hover {
+  color: var(--acento-hover);
+}
+
+/* Accesibilidad: contorno visible al navegar con teclado */
+a:focus-visible,
+.boton:focus-visible {
+  outline: 3px solid var(--complementario);
+  outline-offset: 3px;
+}
+
+/* ---------- Mensajes ---------- */
+.mensaje {
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  border-radius: 8px;
+}
+
+.mensaje--error {
+  color: var(--acento-hover);
+  background-color: var(--superficie);
+  border-left: 4px solid var(--acento);
+}
+
+.mensaje--exito {
+  color: #FFFFFF;
+  background-color: var(--complementario);
+}
+
+.oculto {
+  display: none;
+}
+
+/* ---------- Pie ---------- */
+.pie {
+  padding: 1.25rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--texto-secundario);
+  border-top: 1px solid var(--superficie);
+}
+
+/* ---------- Móvil ---------- */
+@media (max-width: 480px) {
+  .cabecera {
+    padding: 1rem;
+  }
+
+  .registro__tarjeta {
+    padding: 2rem 1.25rem;
+  }
+
+  .registro__titulo {
+    font-size: 1.5rem;
+  }
+}

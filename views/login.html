@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <base href="/">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciar sesión | SalonBook</title>
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <script src="js/login.js" defer></script>
+  <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+  <header class="cabecera">
+    <a href="./" class="logo">SalonBook</a>
+    <nav class="menu">
+      <a href="login" class="menu__enlace" id="login">Iniciar sesión</a>
+      <a href="register" class="boton boton--principal boton--pequeno" id="register">Registrarse</a>
+      <a href="reservas" class="menu__enlace oculto" id="reservar-cita">Reservar cita</a>
+      <a href="mis-reservas" class="menu__enlace oculto" id="mis-reservas">Ver mis citas</a>
+      <button class="boton boton--secundario boton--pequeno oculto" id="logout">Cerrar sesión</button>
+    </nav>
+  </header>
+
+  <main class="login">
+    <div class="login__tarjeta">
+      <h1 class="login__titulo">Iniciar sesión</h1>
+      <p class="login__subtitulo">Accede a tu cuenta para reservar y gestionar tus citas.</p>
+
+      <form id="form-login" class="formulario" novalidate>
+        <div class="campo">
+          <label for="email" class="campo__etiqueta">Email</label>
+          <input type="email" id="email" name="email" class="campo__input"
+                 placeholder="tucorreo@ejemplo.com" autocomplete="email">
+          <span id="error_email_log" class="campo__error"></span>
+        </div>
+
+        <div class="campo">
+          <label for="password" class="campo__etiqueta">Contraseña</label>
+          <input type="password" id="password" name="password" class="campo__input"
+                 placeholder="Tu contraseña" autocomplete="current-password">
+          <span id="error_pwd_log" class="campo__error"></span>
+        </div>
+
+        <p id="login-mensaje" class="mensaje oculto"></p>
+
+        <button type="submit" id="blogin" class="boton boton--principal boton--ancho">Acceder</button>
+      </form>
+
+      <p class="login__pie">
+        ¿No tienes cuenta? <a href="register" class="enlace">Regístrate aquí</a>
+      </p>
+    </div>
+  </main>
+
+  <footer class="pie">
+    <p>&copy; 2026 SalonBook · Peluquería · Lunes a sábado de 9:00 a 20:00</p>
+  </footer>
+</body>
+</html>

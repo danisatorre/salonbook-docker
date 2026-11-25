@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <base href="/">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Servicio | SalonBook</title>
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <script src="js/servicio.js" defer></script>
+  <link rel="stylesheet" href="css/servicio.css">
+</head>
+<body>
+  <header class="cabecera">
+    <a href="./" class="logo">SalonBook</a>
+    <nav class="menu">
+      <a href="login" class="menu__enlace" id="login">Iniciar sesión</a>
+      <a href="register" class="boton boton--principal boton--pequeno" id="register">Registrarse</a>
+      <a href="reservas" class="menu__enlace oculto" id="reservar-cita">Reservar cita</a>
+      <a href="mis-reservas" class="menu__enlace oculto" id="mis-reservas">Ver mis citas</a>
+      <button class="boton boton--secundario boton--pequeno oculto" id="logout">Cerrar sesión</button>
+    </nav>
+  </header>
+
+  <main class="detalle">
+    <a href="./#servicios" class="detalle__volver">&larr; Volver a los servicios</a>
+
+    <p id="servicio-mensaje" class="mensaje">Cargando servicio…</p>
+
+    <article id="detalle-servicio" class="detalle__tarjeta oculto"></article>
+  </main>
+
+  <footer class="pie">
+    <p>&copy; 2026 SalonBook · Peluquería · Lunes a sábado de 9:00 a 20:00</p>
+  </footer>
+</body>
+</html>

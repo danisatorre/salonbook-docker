@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <base href="/">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Error | SalonBook</title>
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="stylesheet" href="css/error.css">
+</head>
+<body>
+  <header class="cabecera">
+    <a href="./" class="logo">SalonBook</a>
+  </header>
+
+  <main class="error">
+    <div class="error__tarjeta">
+      <span class="error__badge">Error</span>
+
+      <!-- Icono de tijeras (SVG en línea, no necesita archivos externos) -->
+      <svg class="error__icono" viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="6" cy="6" r="3" />
+        <circle cx="6" cy="18" r="3" />
+        <line x1="20" y1="4" x2="8.12" y2="15.88" />
+        <line x1="14.47" y1="14.48" x2="20" y2="20" />
+        <line x1="8.12" y1="8.12" x2="12" y2="12" />
+      </svg>
+
+      <h1 class="error__titulo">¡Vaya! Algo se ha enredado</h1>
+      <p class="error__texto">
+        La página que buscas no existe o ha ocurrido un error inesperado.
+        No te preocupes, tu cita está a salvo.
+      </p>
+
+      <div class="error__acciones">
+        <a href="./" class="boton boton--principal">Volver al inicio</a>
+        <a href="reservas" class="boton boton--secundario">Reservar cita</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="pie">
+    <p>&copy; 2026 SalonBook · Peluquería</p>
+  </footer>
+</body>
+</html>
